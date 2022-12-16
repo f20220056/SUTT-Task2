@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_sign_in/google_sign_in.dart';
 import 'package:sutt_task2/firebase.dart';
-import 'package:sutt_task2/home_page.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 
 class LoginPage extends StatefulWidget {
   LoginPage({super.key});
@@ -24,16 +21,28 @@ class _LoginPageState extends State<LoginPage> {
         body: Column(
           children: [
             Padding(
-                padding: const EdgeInsets.fromLTRB(0, 100, 0, 70),
-                child:
-                    Container(child: Image.asset('images/train_sutt (1).jpg'))),
+              padding: const EdgeInsets.fromLTRB(0, 70, 0, 0),
+              child: Text('Rail-Search', style: TextStyle(
+                fontFamily: 'Zendots',
+                fontWeight: FontWeight.w700,
+                color: Colors.blue[900],
+                fontSize: 40
+              ),),
+            ),
+            Padding(
+                padding: const EdgeInsets.fromLTRB(0, 30, 0, 60),
+                child: Container(
+                    child: Image.asset('assets/images/train_sutt (1).jpg'))),
             Container(
-                child: Text('Login with Google',
-                    style: TextStyle(
-                        color: Colors.blue[900],
-                        fontWeight: FontWeight.w900,
-                        fontSize: 20,
-                        fontStyle: FontStyle.italic))),
+              child: Text(
+                'Login with Google',
+                style: TextStyle(
+                  fontFamily: 'Pacifico',
+                  color: Colors.blue[900],
+                  fontSize: 27,
+                ),
+              ),
+            ),
             Padding(
               padding: const EdgeInsets.fromLTRB(0, 15, 0, 0),
               child: FloatingActionButton.extended(
@@ -44,10 +53,10 @@ class _LoginPageState extends State<LoginPage> {
                     flag = true;
                   });
                 },
-                icon: Image.asset('images/google_icon.jpeg'),
+                icon: Image.asset('assets/images/google_icon.jpeg'),
                 label: const Text(
                   'Login',
-                  style: TextStyle(fontWeight: FontWeight.w700),
+                  style: TextStyle(fontWeight: FontWeight.w800, fontSize: 17),
                 ),
                 backgroundColor: Colors.white,
                 foregroundColor: Colors.black,
@@ -56,12 +65,11 @@ class _LoginPageState extends State<LoginPage> {
           ],
         ),
       );
-    }
-    else{
+    } else {
       return const Center(
-              child: CircularProgressIndicator(
-            strokeWidth: 7,
-          ));
+          child: CircularProgressIndicator(
+        strokeWidth: 7,
+      ));
     }
   }
 }

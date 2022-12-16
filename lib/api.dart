@@ -1,12 +1,7 @@
-import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:async';
 import 'dart:convert';
 import 'package:sutt_task2/home_page.dart';
-
-// To parse this JSON data, do
-//
-//     final train = trainFromJson(jsonString);
 
 Train trainFromJson(String str) => Train.fromJson(json.decode(str));
 
@@ -108,7 +103,7 @@ Future<Train> getTrain() async {
   final response = await http.get(
       Uri.parse('https://irctc1.p.rapidapi.com/api/v2/trainBetweenStations?fromStationCode=$from&toStationCode=$to'),
       headers: {
-        'X-RapidAPI-Key': 'aa721a42d5msh31e173a7f5d0683p10d0f0jsn6a5c47bea096',
+        'X-RapidAPI-Key': 'd88ac8db63mshfe87f7dbcde4865p1eda07jsn7f1da97e9ef8',
         'X-RapidAPI-Host': 'irctc1.p.rapidapi.com'
       });
   return Train.fromJson(jsonDecode(response.body));

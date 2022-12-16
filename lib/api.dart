@@ -4,10 +4,6 @@ import 'dart:async';
 import 'dart:convert';
 import 'package:sutt_task2/home_page.dart';
 
-// To parse this JSON data, do
-//
-//     final train = trainFromJson(jsonString);
-
 Train trainFromJson(String str) => Train.fromJson(json.decode(str));
 
 String trainToJson(Train data) => json.encode(data.toJson());

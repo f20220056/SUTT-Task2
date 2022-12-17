@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sutt_task2/schedule.dart';
 import 'package:sutt_task2/train_list.dart';
 
 import 'home_page.dart';
@@ -208,6 +209,23 @@ class _TrainDetailsState extends State<TrainDetails> {
                 ],
               ),
             ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(0, 25, 0, 0),
+              child: FloatingActionButton.extended(label:Text('Get Train Schedule'),
+              icon: Icon(Icons.arrow_circle_right_outlined),
+              backgroundColor: Color.fromARGB(255, 3, 14, 168),
+              elevation: 12,
+              onPressed: () {
+                Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (BuildContext context) {
+                                  return const TrainSchedule();
+                                },
+                              ),
+                            );
+              }, ),
+            )
           ],
         ),
       ),

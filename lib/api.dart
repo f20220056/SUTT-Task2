@@ -100,10 +100,10 @@ class Details {
 }
 
 Future<Train> getTrain() async {
-  final response = await http.get(
+   final response = await http.get(
       Uri.parse('https://irctc1.p.rapidapi.com/api/v2/trainBetweenStations?fromStationCode=$from&toStationCode=$to'),
       headers: {
-        'X-RapidAPI-Key': 'd88ac8db63mshfe87f7dbcde4865p1eda07jsn7f1da97e9ef8',
+        'X-RapidAPI-Key': '239d416dfcmsh1f4f425b457be9bp115fbejsn75249bd1fd51',
         'X-RapidAPI-Host': 'irctc1.p.rapidapi.com'
       });
   return Train.fromJson(jsonDecode(response.body));

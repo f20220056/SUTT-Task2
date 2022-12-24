@@ -3,10 +3,6 @@ import 'dart:async';
 import 'dart:convert';
 import 'package:sutt_task2/home_page.dart';
 
-Train trainFromJson(String str) => Train.fromJson(json.decode(str));
-
-String trainToJson(Train data) => json.encode(data.toJson());
-
 class Train {
   Train({
     required this.status,

@@ -4,10 +4,6 @@ import 'dart:convert';
 import 'package:sutt_task2/home_page.dart';
 import 'package:sutt_task2/train_list.dart';
 
-Schedule scheduleFromJson(String str) => Schedule.fromJson(json.decode(str));
-
-String scheduleToJson(Schedule data) => json.encode(data.toJson());
-
 class Schedule {
   Schedule({
     required this.status,
